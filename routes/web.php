@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $todos = DB::table('todos')->get();
+    return view('index')->with('todos', $todos);
 });
 
 Route::get('/create', function () {

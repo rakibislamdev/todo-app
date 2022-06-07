@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +25,16 @@ Route::get('/create', function () {
 
 Route::get('/edit', function () {
     return view('edit');
+});
+
+Route::get('/store', function (Request $request) {
+    // return $request->all();
+
+    DB::table('todos')->insert([
+        'date' => $request->date,
+        'name' => $request->name,
+        'details' => $request->details
+    ]);
+
+    return redirect('/');
 });

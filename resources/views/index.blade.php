@@ -13,6 +13,9 @@
     <!-- table section-->
     <section class="m-5 p-4 shadow mb-5 bg-body rounded">
         <h1 class="text-center p-3">Our Todo List</h1>
+        <h4 class="text-center text-capitalize">
+            <a href="/create" class="btn btn-primary">create</a>
+        </h4>
         <table class="table table-bordered border-primary">
             <thead>
                 <tr>

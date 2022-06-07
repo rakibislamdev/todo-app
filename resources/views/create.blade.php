@@ -12,7 +12,7 @@
 <body>
     <!-- form section-->
     <section class="m-5 d-flex justify-content-center">
-        <form action="" style="width: 500px" class="bg-light p-4 shadow mb-5 bg-body rounded">
+        <form action="/store" style="width: 500px" class="bg-light p-4 shadow mb-5 bg-body rounded">
             <div class="text-center">
                 <h3>Todo List</h3>
             </div>
@@ -22,14 +22,14 @@
             </div>
             <div class="mb-3">
                 <label for="work" class="form-label">Work name:-</label>
-                <input type="text" name="w-name" class="form-control" id="work">
+                <input type="text" name="name" class="form-control" id="work">
             </div>
             <div class="mb-3">
                 <label for="work" class="form-label">Work details:-</label>
-                <textarea class="form-control" name="w-deteails" id="work" rows="3"></textarea>
+                <textarea class="form-control" name="details" id="work" rows="3"></textarea>
             </div>
             <div class="text-center">
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
         </form>
     </section>

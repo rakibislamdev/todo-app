@@ -22,14 +22,14 @@
             </div>
             <div class="mb-3">
                 <label for="work" class="form-label">Work name:-</label>
-                <input type="text" name="w-name" class="form-control" id="work">
+                <input type="text" name="name" class="form-control" id="work">
             </div>
             <div class="mb-3">
                 <label for="work" class="form-label">Work details:-</label>
-                <textarea class="form-control" name="w-deteails" id="work" rows="3"></textarea>
+                <textarea class="form-control" name="deteails" id="work" rows="3"></textarea>
             </div>
             <div class="text-center">
-                <button type="button" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn btn-primary">Update</button>
             </div>
         </form>
     </section>

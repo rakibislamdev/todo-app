@@ -24,6 +24,9 @@
                 <label for="work" class="form-label">Work details:-</label>
                 <textarea class="form-control" id="work" rows="3"></textarea>
             </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-primary">Update</button>
+            </div>
         </form>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

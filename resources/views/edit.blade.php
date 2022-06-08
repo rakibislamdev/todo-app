@@ -12,21 +12,21 @@
 <body>
     <!-- form section-->
     <section class="m-5 d-flex justify-content-center">
-        <form action="" style="width: 500px" class="bg-light p-4 shadow mb-5 bg-body rounded">
+        <form action="/update/{{$todo->id }}" style="width: 500px" class="bg-light p-4 shadow mb-5 bg-body rounded">
             <div class="text-center">
                 <h3>Todo List</h3>
             </div>
             <div class="mb-3">
                 <label for="date" class="form-label">Date:</label>
-                <input type="date" name="date" class="form-control" id="date" placeholder="select date">
+                <input type="date" name="date" class="form-control" id="date" value="{{ $todo->date }}">
             </div>
             <div class="mb-3">
                 <label for="work" class="form-label">Work name:-</label>
-                <input type="text" name="name" class="form-control" id="work">
+                <input type="text" name="name" class="form-control" id="work" value="{{ $todo->name }}">
             </div>
             <div class="mb-3">
                 <label for="work" class="form-label">Work details:-</label>
-                <textarea class="form-control" name="deteails" id="work" rows="3"></textarea>
+                <textarea class="form-control" name="details" id="work" rows="3">{{ $todo->details }}</textarea>
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-primary">Update</button>

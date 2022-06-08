@@ -24,8 +24,21 @@ Route::get('/create', function () {
     return view('create');
 });
 
-Route::get('/edit', function () {
-    return view('edit');
+Route::get('/edit/{id}', function ($id) {
+    $todo = DB::table('todos')->where('id', $id)->first();
+    return view('edit')->with('todo', $todo);;
+});
+
+Route::get('/update/{id}', function ($id, Request $request) {
+    DB::table('todos')
+        ->where('id', $request->id)
+        ->update([
+            'date' => $request->date,
+            'name' => $request->name,
+            'details' => $request->details
+        ]);
+
+    return redirect('/');
 });
 
 Route::get('/store', function (Request $request) {

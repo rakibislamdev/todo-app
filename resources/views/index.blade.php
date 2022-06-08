@@ -39,7 +39,7 @@
                     <td>{{ $todo->name }}</td>
                     <td>{{ $todo->details }}</td>
                     <td>
-                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <a href="/edit/{{ $todo->id }}" type="submit" class="btn btn-primary">Edit</a>
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </td>
                 </tr>

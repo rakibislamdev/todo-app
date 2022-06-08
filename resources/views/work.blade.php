@@ -26,7 +26,7 @@
             </div>
             <div class="mb-3">
                 <label for="date" class="form-label">Website:</label>
-                <input type="text" name="site" class="form-control" id="site" placeholder="Type your website name">
+                <input type="url" name="site" class="form-control" id="site" placeholder="Type your website name">
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-primary">Save</button>

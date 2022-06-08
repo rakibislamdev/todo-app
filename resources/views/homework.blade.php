@@ -28,6 +28,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">Password</th>
                     <th scope="col">Website</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +38,10 @@
                     <td>{{ $work->email }}</td>
                     <td>{{ $work->password }}</td>
                     <td>{{ $work->website }}</td>
+                    <td>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

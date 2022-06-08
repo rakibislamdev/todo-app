@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $todos = DB::table('todos')->get();
+    $todos = Todo::all();
     return view('index')->with('todos', $todos);
 });
 
@@ -25,13 +26,12 @@ Route::get('/create', function () {
 });
 
 Route::get('/edit/{id}', function ($id) {
-    $todo = DB::table('todos')->where('id', $id)->first();
+    $todo = Todo::find($id);
     return view('edit')->with('todo', $todo);;
 });
 
 Route::get('/update/{id}', function ($id, Request $request) {
-    DB::table('todos')
-        ->where('id', $request->id)
+    Todo::where('id', $request->id)
         ->update([
             'date' => $request->date,
             'name' => $request->name,
@@ -42,7 +42,7 @@ Route::get('/update/{id}', function ($id, Request $request) {
 });
 
 Route::get('/delete/{id}', function ($id) {
-    $todo = DB::table('todos')->where('id', $id)->delete();
+    $todo = Todo::where('id', $id)->delete();
 
     return redirect('/');
 });
@@ -50,14 +50,12 @@ Route::get('/delete/{id}', function ($id) {
 Route::get('/store', function (Request $request) {
     // return $request->all();
 
-    DB::table('todos')->insert([
-        'date' => $request->date,
-        'name' => $request->name,
-        'details' => $request->details
-    ]);
+    Todo::create($request->all());
 
     return redirect('/');
 });
+
+// home work
 
 Route::get('/work', function () {
     return view('work');

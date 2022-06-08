@@ -41,6 +41,12 @@ Route::get('/update/{id}', function ($id, Request $request) {
     return redirect('/');
 });
 
+Route::get('/delete/{id}', function ($id) {
+    $todo = DB::table('todos')->where('id', $id)->delete();
+
+    return redirect('/');
+});
+
 Route::get('/store', function (Request $request) {
     // return $request->all();
 

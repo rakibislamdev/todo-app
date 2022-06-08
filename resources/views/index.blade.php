@@ -40,7 +40,7 @@
                     <td>{{ $todo->details }}</td>
                     <td>
                         <a href="/edit/{{ $todo->id }}" type="submit" class="btn btn-primary">Edit</a>
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <a href="/delete/{{ $todo->id }}" type="submit" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach

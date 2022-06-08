@@ -39,3 +39,23 @@ Route::get('/store', function (Request $request) {
 
     return redirect('/');
 });
+
+Route::get('/work', function () {
+    return view('work');
+});
+
+Route::get('/homework', function () {
+    $works = DB::table('homework')->get();
+    return view('homework')->with('works', $works);
+});
+
+Route::get('/save', function (Request $request) {
+
+    DB::table('homework')->insert([
+        'email' => $request->email,
+        'password' => $request->password,
+        'website' => $request->site
+    ]);
+
+    return redirect('/homework');
+});

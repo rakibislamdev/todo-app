@@ -13,14 +13,45 @@
     <!-- table section-->
     <section class="m-5 p-4 shadow mb-5 bg-body rounded">
         <h1 class="text-center p-3">Our Todo List</h1>
-        <div>
-            <h4 class="text-center text-capitalize">
-                <a href="/create" class="btn btn-primary">create</a>
-            </h4>
-            <h4 class="text-center text-capitalize">
-                <a href="/homework" class="btn btn-primary">Homework</a>
-            </h4>
+        <div class="p-2 text-center">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Create
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Todo List</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/store">
+                                <div class="mb-3">
+                                    <label for="date" class="form-label">Date:</label>
+                                    <input type="date" name="date" class="form-control" id="date"
+                                        placeholder="select date">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="work" class="form-label">Work name:-</label>
+                                    <input type="text" name="name" class="form-control" id="work">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="work" class="form-label">Work details:-</label>
+                                    <textarea class="form-control" name="details" id="work" rows="3"></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- Button trigger modal -->
         <table class="table table-bordered border-primary">
             <thead>
                 <tr>

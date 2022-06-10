@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('date');
             $table->string('name');
             $table->text('details');
+            $table->boolean('complete')->default(false);
             $table->timestamps();
         });
     }

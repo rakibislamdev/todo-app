@@ -21,8 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [TodoController::class, 'index']);
 
-Route::get('/create', [TodoController::class, 'create']);
-
 Route::get('/store', [TodoController::class, 'store']);
 
 Route::get('/edit/{todo}', [TodoController::class, 'edit']);
@@ -30,3 +28,6 @@ Route::get('/edit/{todo}', [TodoController::class, 'edit']);
 Route::get('/update/{todo}', [TodoController::class, 'update']);
 
 Route::get('/delete/{todo}', [TodoController::class, 'destroy']);
+
+
+Route::get('/status', [TodoController::class, 'status']);

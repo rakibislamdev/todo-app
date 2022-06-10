@@ -18,16 +18,6 @@ class TodoController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -76,5 +66,28 @@ class TodoController extends Controller
         $todo->delete();
 
         return redirect('/');
+    }
+
+    public function status(Request  $request)
+    {
+        // return $request->all();
+
+
+        $todos = Todo::all();
+
+        foreach ($todos as $todo) {
+            if (isset($request->status) && array_key_exists($todo->id, $request->status)) {
+                $todo->update([
+                    'complete' => true
+                ]);
+            } else {
+                $todo->update([
+                    'complete' => \false
+                ]);
+            }
+        }
+
+
+        return \redirect('/');
     }
 }

@@ -18,6 +18,17 @@ class TodoController extends Controller
     }
 
     /**
+     * show the form for editing new resource.
+     *
+     * @param  \App\Models\Todo  $todo
+     * @return \Illuminate\Http\Response
+     */
+    public function create(Todo $todo)
+    {
+        return view('create');
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

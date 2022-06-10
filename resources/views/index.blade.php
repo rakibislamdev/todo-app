@@ -10,6 +10,24 @@
 </head>
 
 <body>
+
+    <div class="d-flex justify-content-end">
+        @if (Route::has('login'))
+        <div class="hidden fixed top-4 right-4 px-6 py-4 sm:block">
+            @auth
+            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+            @else
+            <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline pe-3">Log in</a>
+
+            @if (Route::has('register'))
+            <a href="{{ route('register') }}"
+                class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline pe-3">Register</a>
+            @endif
+            @endauth
+        </div>
+        @endif
+    </div>
+
     <!-- table section-->
     <section class="m-5 p-4 shadow mb-5 bg-body rounded">
         <h1 class="text-center p-3">Our Todo List</h1>
@@ -19,8 +37,7 @@
             </button>
 
             <!-- Edit Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
+            <div class="modal fade" id="exampleModal" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -80,33 +97,31 @@
 
                         <td>
                             <a href="/edit/{{ $todo->id }}" type="submit" class="btn btn-primary">Edit</a>
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                data-bs-target="#delete">
-                                delete
-                            </button>
-                        </td>
-                        <!-- Modal delete-->
-                        <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    {{-- <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div> --}}
-                                    <div class="modal-body">
-                                        are you sure? you want to delete?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Cancel</button>
-                                        <a href="/delete/{{ $todo->id }}" type="button"
-                                            class="btn btn-danger">Delete</a>
+                            <a href="/delete/{{ $todo->id }}" type="submit" class="btn btn-danger">Delete</a>
+                            {{-- <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#delete">Delete</button>
+                            <!-- Modal -->
+                            <div class="modal" id="delete" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="delte">Modal title</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            are you sure? you want to delete?
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <a href="/delete/{{ $todo->id }}" type="submit"
+                                                    class="btn btn-primary">Delete</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </div> --}}
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
